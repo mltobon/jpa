@@ -46,6 +46,6 @@ public class TicketController {
 
         // Guardar la reserva del boleto en la base de datos
         ticketService.doReservation(ticketReservation);
-        return "redirect:/create?success"; // Redireccionar al formulario con un mensaje de éxito
+        return "redirect:/create-ticket?success"; // Redireccionar al formulario con un mensaje de éxito
     }
 }
