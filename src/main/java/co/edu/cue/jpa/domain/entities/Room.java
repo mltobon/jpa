@@ -9,12 +9,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Person {
+@Table(name="rooms")
+public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private String address;
-    private int age;
-
+    @Column(name = "total_rows")
+    private int totalRows;
+    @Column(name = "seats_per_row")
+    private int seatsPerRow;
 }

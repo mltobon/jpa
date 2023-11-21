@@ -9,12 +9,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Person {
+@Table(name="shows")
+public class Show {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
-    private String address;
-    private int age;
+    @ManyToOne
+    @JoinColumn(name="room_id")
+    private Room room;
+    @ManyToOne
+    @JoinColumn(name="movie_id")
+    private Movie movie;
 
+    private String name;
 }

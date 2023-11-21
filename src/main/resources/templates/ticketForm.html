@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Create Ticket Reservation</title>
+</head>
+<body>
+<h2>Create Ticket Reservation</h2>
+
+<form th:action="@{/new-ticket}" method="post" class="border p-3 form">
+  <label for="show">Show:</label>
+  <div class="select-container">
+
+  <select id="show" name="show">
+    <option th:each="show : ${shows}" th:value="${show.id}" th:text="${show.room.name + ' - ' + show.movie.name}"></option>
+  </select>
+  </div>
+
+  <br/>
+
+  <label for="seat">Seat:</label>
+  <select id="seat" name="seat">
+    <option th:each="seat : ${seats}" th:value="${seat.id}" th:text="${seat.room.name + ' - Row ' + seat.row + ', Seat ' + seat.seatNumber}"></option>
+  </select>
+
+  <br/>
+
+  <button type="submit" value="Enviar" class="btn btn-primary" style="background-color: #0c0096; font-family: 'Lobster Two', cursive;">Enviar</button>
+</form>
+
+<!-- Display success message if redirected with success parameter -->
+<div th:if="${param.success}">
+  <p style="color: green;">Ticket reservation created successfully!</p>
+</div>
+</body>
+</html>

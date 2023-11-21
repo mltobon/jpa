@@ -2,12 +2,12 @@ package co.edu.cue.jpa.services.impl;
 
 import co.edu.cue.jpa.domain.entities.Person;
 import co.edu.cue.jpa.repositories.PersonaRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import co.edu.cue.jpa.services.PersonaService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class PersonaServiceImpl implements PersonaService{
+public class PersonaServiceImpl implements PersonaService {
     private final PersonaRepository repository;
 
     public PersonaServiceImpl(PersonaRepository repository) {

@@ -1,5 +1,6 @@
 package co.edu.cue.jpa.domain.entities;
 
+import co.edu.cue.jpa.domain.enums.Audience;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,12 +10,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Person {
+@Table(name="movies")
+public class Movie {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private String address;
-    private int age;
-
+    private double duration;
+    @Enumerated(EnumType.STRING)
+    private Audience audience;
 }

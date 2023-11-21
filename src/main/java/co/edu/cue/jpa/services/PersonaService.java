@@ -1,4 +1,4 @@
-package co.edu.cue.jpa.services.impl;
+package co.edu.cue.jpa.services;
 
 import co.edu.cue.jpa.domain.entities.Person;
 
