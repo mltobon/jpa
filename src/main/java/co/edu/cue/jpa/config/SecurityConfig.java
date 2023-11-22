@@ -31,6 +31,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authRequest ->
                         authRequest
+                                .requestMatchers("/public/**").permitAll() // Allow requests from "/public" path
                                 .anyRequest().authenticated()
                 )
                 .formLogin(Customizer.withDefaults())
