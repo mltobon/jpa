@@ -15,8 +15,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
+
 @Controller
-@RequestMapping
+@RequestMapping("/ticket")
 @AllArgsConstructor
 public class TicketController {
 
@@ -46,6 +47,6 @@ public class TicketController {
 
         // Guardar la reserva del boleto en la base de datos
         ticketService.doReservation(ticketReservation);
-        return "redirect:/create-ticket?success"; // Redireccionar al formulario con un mensaje de éxito
+        return "redirect:/ticket/create-ticket?success"; // Redireccionar al formulario con un mensaje de éxito
     }
 }
